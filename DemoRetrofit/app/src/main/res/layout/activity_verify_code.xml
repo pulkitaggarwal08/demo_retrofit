@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.demo_retorfit.com.activities.VerifyCodeActivity">
+
+    <EditText
+        android:id="@+id/etConfirmCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="25dp"
+        android:ems="5"
+        android:gravity="center"
+        android:hint="@string/hintCode"
+        android:inputType="number"
+        android:maxLength="6" />
+
+    <Button
+        android:id="@+id/btnConfirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etConfirmCode"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="20dp"
+        android:text="@string/confirm"
+        android:textAllCaps="false" />
+
+</RelativeLayout>

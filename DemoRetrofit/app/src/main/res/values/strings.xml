@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">DemoRetrofit</string>
+
+    <string name="nw_error_auth">Authorization Failed</string>
+    <string name="nw_error_network_error">Network Error!</string>
+    <string name="nw_error_something_went_wrong">Something went wrong&#8230;</string>
+    <string name="nw_error_unexpected">Unexpected Error</string>
+    <string name="nw_error_server_error">Server error</string>
+    <string name="nw_error_unable_to_process">Unable to process your request</string>
+
+    <string name="name">Name</string>
+    <string name="gender">Gender</string>
+    <string name="email">Email</string>
+    <string name="address">Address</string>
+
+    <string name="get_all_contacts">Get All Contacts</string>
+    <string name="check_mobile_numbers">Check Mobile Numbers</string>
+    <string name="check">Check</string>
+    <string name="confirm">Confirm</string>
+
+    <!-- Alert Validation -->
+    <string name="validWentWrong">Oops something went Wrong.</string>
+    <string name="validPhone">Please enter your phone number.</string>
+
+    <!-- dialog -->
+    <string name="dialog_ok">OK</string>
+    <string name="dialog_yes">YES</string>
+    <string name="dialog_edit">EDIT</string>
+
+    <!-- Edit Text Hint -->
+    <string name="hintCode">--- ---</string>
+
+</resources>
