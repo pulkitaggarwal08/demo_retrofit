@@ -45,7 +45,7 @@ public class GetAllContactsActivity extends AppCompatActivity {
     }
 
     private void init() {
-
+        //Todo: show Progress Bar
         rv_get_all_contacts.setLayoutManager(new LinearLayoutManager(App.getAppContext()));
 
         Map<String, String> map = new HashMap<>();
@@ -54,6 +54,7 @@ public class GetAllContactsActivity extends AppCompatActivity {
                 .enqueue(new RestCallback<Map>() {
                     @Override
                     public void onSuccess(Map map, Response response) {
+                        //Todo: hide Progress Bar
                         ArrayList<Contacts> arrayList;
                         ArrayList<Contacts> contactsArrayList = new ArrayList<>();
 

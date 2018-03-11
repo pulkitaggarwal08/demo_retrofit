@@ -1,6 +1,8 @@
 package com.demo_retorfit.com.api;
 
 import com.demo_retorfit.com.entity.ProfileEntity;
+import com.demo_retorfit.com.eventbusmodels.TokenRequest;
+import com.demo_retorfit.com.eventbusmodels.TokenResponse;
 
 import org.json.JSONObject;
 
@@ -8,6 +10,7 @@ import java.util.Map;
 
 import okhttp3.ResponseBody;
 import retrofit2.Call;
+import retrofit2.http.Body;
 import retrofit2.http.FieldMap;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
@@ -21,12 +24,12 @@ import retrofit2.http.Path;
 public interface ApiService {
 
     @FormUrlEncoded
-    @POST("phone-numbers/register-number")
-    Call<ResponseBody> registerMobile(@FieldMap Map<String, String> stringMap);
-
-    @FormUrlEncoded
     @POST("contacts/")
     Call<Map> getContactsInformation(@FieldMap Map<String, String> map);
+
+    @FormUrlEncoded
+    @POST("phone-numbers/register-number")
+    Call<ResponseBody> registerMobile(@FieldMap Map<String, String> stringMap);
 
     @FormUrlEncoded
     @POST("phone-numbers/verify-number")
@@ -36,5 +39,8 @@ public interface ApiService {
     @GET("accounts/{accountId}/{phoneNum}")
     Call<ProfileEntity> getProfile(@Path("accountId") String accountId, @Path("phoneNum") String phoneNum);
 
+    @POST("accounts/{accountId}/login")
+    Call<TokenResponse> generateToken(@Path("accountId") String accountId,
+                                      @Body TokenRequest tokenRequest);
 
 }

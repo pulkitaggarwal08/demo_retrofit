@@ -1,4 +1,4 @@
-package com.demo_retorfit.com.activities;
+package com.demo_retorfit.com.registration;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -11,18 +11,15 @@ import android.widget.EditText;
 import com.demo_retorfit.com.R;
 import com.demo_retorfit.com.config.App;
 import com.demo_retorfit.com.config.AppConstant;
+import com.demo_retorfit.com.config.AppPreference;
 import com.demo_retorfit.com.utils.Utils;
 import com.demo_retorfit.com.wrapper.RestCallback;
-
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
 import okhttp3.ResponseBody;
-import okhttp3.internal.Util;
 import retrofit2.Response;
 
 public class CheckMobileNumbersActivity extends AppCompatActivity {
@@ -69,18 +66,22 @@ public class CheckMobileNumbersActivity extends AppCompatActivity {
         Map<String, String> map = new HashMap<>();
         map.put("mobileNumber", mobileNumber);
 
+        // save phone num
+        App.getAppPreference().saveString(AppPreference.KEY_PHONE_NUM, mobileNumber);
+
         //Todo: show progress bar
         App.getApiHelper().getRestApiService(false).registerMobile(map)
                 .enqueue(new RestCallback<ResponseBody>() {
                     @Override
                     public void onSuccess(ResponseBody responseBody, Response response) {
-                        //Todo: cancel progress bar
+                        //Todo: hide progress bar
                         try {
                             String getResponse = responseBody.string();
 
                             Intent intent = new Intent(getApplicationContext(), VerifyCodeActivity.class);
                             intent.putExtra("mobileNumber", mobileNumber);
                             startActivity(intent);
+                            finish();
 
                         } catch (IOException e) {
                             e.printStackTrace();
@@ -89,7 +90,7 @@ public class CheckMobileNumbersActivity extends AppCompatActivity {
 
                     @Override
                     public void onFailure(String error) {
-                        //Todo: cancel progress bar
+                        //Todo: hide progress bar
                         Utils.generalOkAlert(error, activity);
                     }
                 });

@@ -20,8 +20,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".activities.GetAllContactsActivity" />
-        <activity android:name=".activities.CheckMobileNumbersActivity" />
-        <activity android:name=".activities.VerifyCodeActivity"></activity>
+        <activity android:name=".registration.CheckMobileNumbersActivity" />
+        <activity android:name=".registration.VerifyCodeActivity" />
+        <activity android:name=".registration.ProfileInformationActivity" />
+        <activity android:name=".activities.DashboardActivity"></activity>
     </application>
 
 </manifest>

@@ -49,5 +49,9 @@ dependencies {
     implementation 'com.android.support:design:26.1.0'
     /*Circle Image*/
     implementation 'de.hdodenhof:circleimageview:2.1.0'
+    /*True Time*/
+//    implementation 'com.github.instacart.truetime-android:library:1.5'
+    implementation 'com.github.instacart.truetime-android:library-extension-rx:2.0'
+
 
 }

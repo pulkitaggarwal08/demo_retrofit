@@ -13,6 +13,10 @@ public class AppPreference {
     private static AppPreference appPreferences;
     protected SharedPreferences sharedPreferences;
 
+    public final static String KEY_PHONE_NUM = "phone_num";
+    public final static String KEY_USER_TOKEN = "user";
+    public final static String KEY_USER_REFRESH_TOKEN = "user_refresh";
+
     public AppPreference(Context context) {
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
     }
